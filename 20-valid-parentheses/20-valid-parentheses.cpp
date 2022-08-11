@@ -7,22 +7,20 @@ public:
                 st.push(s[i]);
                 continue;
             }
+            if(st.empty()) return false;
             else if(s[i]==']'){
-                if(st.empty()) return false;
                 if(st.top()=='['){
                     st.pop();
                 }
                 else return false;
             }
             else if(s[i]=='}'){
-                if(st.empty()) return false;
                 if(st.top()=='{'){
                     st.pop();
                 }
                 else return false;
             }
             else if(s[i]==')'){
-                if(st.empty()) return false;
                 if(st.top()=='('){
                     st.pop();
                 }
